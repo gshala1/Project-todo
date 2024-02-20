@@ -15,7 +15,7 @@ interface StoreState {
 
 }
 
-// Initialize the local storage key
+
 const STORAGE_KEY = 'zustand_todo_items';
 
 export const useStore = create<StoreState>()(persist(
@@ -38,7 +38,7 @@ loading: true,
       })),
   }),
   {
-    name: STORAGE_KEY, // Specify the local storage key
-    getStorage: () => localStorage, // Use localStorage for persistence
+    name: STORAGE_KEY,
+    getStorage: () => localStorage, 
   }
 ));
