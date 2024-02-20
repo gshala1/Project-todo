@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import TaskInput from "./TaskInput";
 import TaskFilter from "./TaskFilter";
@@ -6,7 +6,6 @@ import TaskList from "./TaskList";
 import EditDialog from "./EditDialog";
 import DeleteModal from "./DeleteDialog";
 import { useStore } from "@/store/todo.store";
-
 
 const HomePage = () => {
   const [editedIndex, setEditedIndex] = useState<number | null>(null);
@@ -18,7 +17,6 @@ const HomePage = () => {
   const { items, updateItem, removeItem } = useStore();
 
   const handleEdit = (index: number) => {
-    
     setEditedIndex(index);
     setIsEditModalOpen(true);
   };

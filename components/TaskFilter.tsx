@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 
 interface TaskFilterProps {
@@ -10,7 +10,10 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ filter, setFilter }) => {
   return (
     <section id="container">
       <div className="all-button">
-        <button onClick={() => setFilter("All")} className={filter === "All" ? "active" : ""}>
+        <button
+          onClick={() => setFilter("All")}
+          className={filter === "All" ? "active" : ""}
+        >
           All
         </button>
         <button

@@ -1,14 +1,13 @@
-
-"use client"
+"use client";
 
 import React, { useRef } from "react";
 import { useStore } from "@/store/todo.store";
 
 const TaskInput = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<any>(null);
   const { addItem } = useStore();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event:any) => {
     event.preventDefault();
     const newItemName = inputRef.current?.value.trim();
     if (newItemName) {
