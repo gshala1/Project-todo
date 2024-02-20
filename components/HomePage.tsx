@@ -34,7 +34,8 @@ const HomePage = () => {
   };
 
   const handleDelete = (index: number) => {
-    setEditedIndex(index);
+    const originalIndex = items.findIndex(item => item === filteredItems[index]);
+    setEditedIndex(originalIndex);
     setIsDeleteModalOpen(true);
   };
 
@@ -51,8 +52,9 @@ const HomePage = () => {
   };
 
   const toggleCompletion = (index: number) => {
-    const updatedItem = { ...items[index], completed: !items[index].completed };
-    updateItem(index, updatedItem);
+    const originalIndex = items.findIndex(item => item === filteredItems[index]);
+    const updatedItem = { ...items[originalIndex], completed: !items[originalIndex].completed };
+    updateItem(originalIndex, updatedItem);
   };
 
   const filteredItems = items.filter((item) => {
