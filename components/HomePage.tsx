@@ -1,7 +1,5 @@
 "use client"
-
 import React, { useState } from "react";
-import "./input.css";
 import TaskInput from "./TaskInput";
 import TaskFilter from "./TaskFilter";
 import TaskList from "./TaskList";
@@ -20,6 +18,7 @@ const HomePage = () => {
   const { items, updateItem, removeItem } = useStore();
 
   const handleEdit = (index: number) => {
+    
     setEditedIndex(index);
     setIsEditModalOpen(true);
   };
