@@ -11,6 +11,7 @@ interface TaskListProps {
   toggleCompletion: (index: number) => void;
   handleEdit: (index: number) => void;
   handleDelete: (index: number) => void;
+  onCreateTask: () => void; 
 }
 
 const TaskList: React.FC<TaskListProps> = ({
@@ -18,6 +19,7 @@ const TaskList: React.FC<TaskListProps> = ({
   toggleCompletion,
   handleEdit,
   handleDelete,
+  onCreateTask,
 }) => {
   const [loading, setLoading] = useState(true);
 
@@ -34,12 +36,17 @@ const TaskList: React.FC<TaskListProps> = ({
       </div>
     );
   }
+  const handleCreateTask = () => {
+    if (onCreateTask) {
+      onCreateTask();
+    }
+  };
 
   if (!filteredItems.length) {
     return (
       <div className="empty-tasks">
         <p className="empty-description">You don't have any items.</p>
-        <Image className="img-circle" src={plusCircle} alt="circle" />
+        <Image className="img-circle"  onClick={handleCreateTask} src={plusCircle} alt="circle" />
         <p className="create-text">Create Task</p>
       </div>
     );

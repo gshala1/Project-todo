@@ -1,9 +1,12 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef,useEffect } from "react";
 import { useStore } from "@/store/todo.store";
-
-const TaskInput = () => {
+interface TaskInputProps {
+  creatingTask: boolean;
+  resetCreatingTask: () => void;
+}
+const TaskInput: React.FC<TaskInputProps>  = ({creatingTask,resetCreatingTask}) => {
   const inputRef = useRef<any>(null);
   const { addItem } = useStore();
 
@@ -16,6 +19,15 @@ const TaskInput = () => {
       inputRef.current!.value = "";
     }
   };
+
+
+  useEffect(() => {
+    if (creatingTask) {
+      inputRef.current?.focus();
+      resetCreatingTask();
+    }
+  }, [creatingTask, resetCreatingTask]);
+
 
   return (
     <section id="container">

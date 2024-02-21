@@ -276,7 +276,9 @@ p {
   line-height: 24px;
 }
 
-
+.img-circle{
+  cursor: pointer;
+}
 .text-content {
   padding: 0;
 }

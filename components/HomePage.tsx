@@ -14,6 +14,7 @@ const HomePage = () => {
   const [filter, setFilter] = useState<"All" | "Completed" | "Incompleted">(
     "All"
   );
+  const [creatingTask, setCreatingTask] = useState(false);
   const { items, updateItem, removeItem } = useStore();
 
   const handleEdit = (index: number) => {
@@ -69,13 +70,14 @@ const HomePage = () => {
 
   return (
     <>
-      <TaskInput />
+      <TaskInput  creatingTask={creatingTask}  resetCreatingTask={() => setCreatingTask(false)}/>
       <TaskFilter filter={filter} setFilter={setFilter} />
       <TaskList
         filteredItems={filteredItems}
         toggleCompletion={toggleCompletion}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        onCreateTask={() => setCreatingTask(true)}
       />
       <EditDialog
         open={isEditModalOpen}
