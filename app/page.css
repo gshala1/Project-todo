@@ -183,6 +183,11 @@ input {
   border-bottom: 1px solid rgb(220, 220, 220);
   padding: 0 25px;
 }
+.all-img{
+  padding: 0 25px;
+  padding-top: 25px;
+  align-items: center;
+}
 
 .dialog-title {
   width: 100%;
@@ -273,7 +278,6 @@ p {
 
 
 .text-content {
-  max-width: 352px;
   padding: 0;
 }
 .dialog-delete {
@@ -290,7 +294,7 @@ p {
 }
 .MuiPaper-root {
   border-radius: 12px;
-  width: 100%;
+  width: 40%;
  
 }
 
@@ -298,13 +302,14 @@ p {
   padding: 0;
 }
 .title-delete {
-  padding: 0;
+ 
   color: var(--Gray-900, #101828);
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 28px;
   margin-bottom: 8px;
+  padding: 0 25px;
 }
 .img-x {
   cursor: pointer;
@@ -312,6 +317,8 @@ p {
 .all-btnn {
   padding: 0;
   margin-top: 32px;
+  padding: 0 25px;
+  padding-bottom: 25px;
 }
 .all-img {
   display: flex;
