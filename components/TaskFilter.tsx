@@ -11,6 +11,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ filter, setFilter }) => {
     <section id="container">
       <div className="all-button">
         <button
+        id="btn-filter-all"
           onClick={() => setFilter("All")}
           className={filter === "All" ? "active" : ""}
         >

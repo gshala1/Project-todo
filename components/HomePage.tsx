@@ -6,6 +6,9 @@ import TaskList from "./TaskList";
 import EditDialog from "./EditDialog";
 import DeleteModal from "./DeleteDialog";
 import { useStore } from "@/store/todo.store";
+import Image from "next/image";
+import checkCirclee from "@/assets/check-circle.svg";
+import { motion, animate } from "framer-motion";
 
 const HomePage = () => {
   const [editedIndex, setEditedIndex] = useState<number | null>(null);
@@ -16,6 +19,7 @@ const HomePage = () => {
   );
   const [creatingTask, setCreatingTask] = useState(false);
   const { items, updateItem, removeItem } = useStore();
+  const [isEditUpdated, setIsEditUpdated] = useState(false);
 
   const handleEdit = (index: number) => {
     setEditedIndex(index);
@@ -26,7 +30,11 @@ const HomePage = () => {
     if (editedIndex !== null) {
       updateItem(editedIndex, { ...items[editedIndex], name });
     }
+    setIsEditUpdated(true);
     setIsEditModalOpen(false);
+    setTimeout(() => {
+      setIsEditUpdated(false);
+    }, 3000);
   };
 
   const handleCancelEdit = () => {
@@ -35,7 +43,9 @@ const HomePage = () => {
   };
 
   const handleDelete = (index: number) => {
-    const originalIndex = items.findIndex(item => item === filteredItems[index]);
+    const originalIndex = items.findIndex(
+      (item) => item === filteredItems[index]
+    );
     setEditedIndex(originalIndex);
     setIsDeleteModalOpen(true);
   };
@@ -53,8 +63,13 @@ const HomePage = () => {
   };
 
   const toggleCompletion = (index: number) => {
-    const originalIndex = items.findIndex(item => item === filteredItems[index]);
-    const updatedItem = { ...items[originalIndex], completed: !items[originalIndex].completed };
+    const originalIndex = items.findIndex(
+      (item) => item === filteredItems[index]
+    );
+    const updatedItem = {
+      ...items[originalIndex],
+      completed: !items[originalIndex].completed,
+    };
     updateItem(originalIndex, updatedItem);
   };
 
@@ -67,10 +82,30 @@ const HomePage = () => {
       return !item.completed;
     }
   });
+  const handlePopupClose = () => {
+    setIsEditUpdated(false); // Reset state when popup is closed
+  };
 
   return (
     <>
-      <TaskInput  creatingTask={creatingTask}  resetCreatingTask={() => setCreatingTask(false)}/>
+      {isEditUpdated && (
+        <motion.div id="container" className="edit-popup"  whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 1.1 }}
+        drag="x"
+        dragConstraints={{ left: -100, right: 100 }} onClick={handlePopupClose}>
+          <motion.p
+            className="popup"
+         
+          >
+            <Image src={checkCirclee} alt="checkcicrle" />
+            <span>Edit successfully updated!</span>
+          </motion.p>
+        </motion.div>
+      )}
+      <TaskInput
+        creatingTask={creatingTask}
+        resetCreatingTask={() => setCreatingTask(false)}
+      />
       <TaskFilter filter={filter} setFilter={setFilter} />
       <TaskList
         filteredItems={filteredItems}

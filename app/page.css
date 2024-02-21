@@ -60,14 +60,14 @@ input {
 .all-button {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   gap: 24px;
   margin-top: 15px;
 }
 .all-button button {
   display: flex;
-  width: 11%;
-  padding: 10px 39px;
+  padding: 16px 28px;
   justify-content: center;
   gap: 17px;
   flex-shrink: 0;
@@ -378,6 +378,25 @@ p {
   justify-content: center;
   align-items: center;
 }
+.edit-popup{
+  display: flex;
+  justify-content: flex-start;
+padding-top: 25px;
+
+ 
+}
+.edit-popup p{
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid gray;
+  align-items: center;
+  padding: 13px;
+  border-radius: 20px;
+  color: #101828;
+  gap: 10px;
+  background-color:#15cc77;
+}
+
 
 @media (max-width: 1250px) {
   #container {
@@ -399,8 +418,5 @@ p {
   .btn-delete {
     width: 20%;
     padding: 14px 30px;
-  }
-  .all-button button {
-    font-size: 12px;
   }
 }
