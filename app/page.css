@@ -176,36 +176,65 @@ input {
 .btn-delete:hover {
   background-color: #dc141b;
 }
+.title-icon {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 0 25px;
+}
 
 .dialog-title {
-  font-size: 28px;
+  width: 100%;
+  font-size: 26px;
+  padding: 0;
+  padding: 15px 25px;
 }
 .dialog-content {
+  display: flex;
   scrollbar-width: none;
-  height: 150px;
-  align-items: center;
-  padding-left: 28px;
+  height: 70px;
+  margin-top: 15px;
+  padding: 0 26px;
+}
+p {
+  padding: 0 26px;
+  padding-bottom: 15px;
+  color: red;
 }
 .dialog-text {
   font-size: 18px;
 }
 .textfiled {
+  display: flex;
   width: 100%;
+  padding: 0;
 }
+
+
 .dialog-actions {
-  padding-right: 27px;
+  display: flex;
+  width: 100%;
+  padding: 0 25px;
+  padding-bottom: 17px;
+  padding-top: 30px;
+}
+.btn-savee {
+  background-color: #12b76a !important;
+  color: white !important;
+}
+.btn-savee:hover {
+  background-color: #0ca960 !important;
 }
 .dialog-actions button {
   display: flex;
+  width: 100%;
   padding: 10px 18px;
-  justify-content: center;
-  align-items: center;
   gap: 8px;
   border-radius: 8px;
   border: 1px solid var(--Gray-300, #d0d5dd);
-  background: var(--Base-White, #fff);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  color: black !important;
+  color: black;
 }
 .btnn-delete {
   display: flex;
@@ -241,6 +270,8 @@ input {
   font-weight: 500;
   line-height: 24px;
 }
+
+
 .text-content {
   max-width: 352px;
   padding: 0;
@@ -258,11 +289,12 @@ input {
   align-items: center;
 }
 .MuiPaper-root {
-  padding: 24px;
   border-radius: 12px;
   width: 100%;
+ 
 }
-.MuiPaper-container {
+
+.MuiPaper-container{
   padding: 0;
 }
 .title-delete {

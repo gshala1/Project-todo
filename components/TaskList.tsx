@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { useStore } from "@/store/todo.store";
 import plusCircle from "@/assets/plus-circle.svg";
 import checkCircle from "@/assets/check-circle.svg";
 import checkCircleActiv from "@/assets/check-circle-active.svg";
