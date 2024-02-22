@@ -8,6 +8,7 @@ body {
 }
 .input-box {
   display: flex;
+ 
   width: 100%;
   justify-content: flex-start;
   align-items: center;
@@ -77,10 +78,13 @@ input {
   background: var(--Base-White, #fff);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   color: var(--Gray-700, #344054);
-  font-size: 17px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 28px;
+}
+#btn-filter-all{
+  padding: 16px 50px;
 }
 .all-button.btn1 {
   padding: 16px 38px;
@@ -89,11 +93,13 @@ input {
 .all-button button.active {
   border-radius: 8px;
   border: 1px solid var(--Gray-300, #d0d5dd);
-  background: #f2f4f7;
+  background: var(--Gray-100, #F2F4F7);
+
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
 .all-button button:hover {
-  background-color: rgb(238, 238, 238);
+  background: var(--Gray-100, #F2F4F7);
+
 }
 
 .new-task {
@@ -152,7 +158,8 @@ input {
   line-height: 28px;
 }
 .btn-edit:hover {
-  background-color: rgb(238, 238, 238);
+  background: var(--Gray-100, #F2F4F7);
+
 }
 .btn-delete {
   display: flex;
@@ -220,6 +227,9 @@ p {
   display: flex;
   width: 100%;
   padding: 0;
+}
+.MuiInputBase-input.MuiOutlinedInput-input{
+  width: 93%;
 }
 
 
@@ -395,6 +405,7 @@ padding-top: 25px;
   color: #101828;
   gap: 10px;
   background-color:#15cc77;
+
 }
 
 
